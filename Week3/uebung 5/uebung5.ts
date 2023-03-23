@@ -34,4 +34,20 @@ function genericLast<T>(arr: Array<T>): T | undefined{
 
 console.log(genericLast([1, 2, 3]));
 
+// Letzte Aufgabe
+
+function genericRange<T>(collection: Array<T>, start: number, end: number): Array<T>|T{
+    if (start < 0) {
+        return [];
+    }
+    if (end > collection.length - 1) {
+        return [];
+    }
+    const subCollection = collection.slice(start, end);
+    if (subCollection.length === 1) {
+        subCollection[0];
+    }
+    return subCollection;
+}
+
 export {}

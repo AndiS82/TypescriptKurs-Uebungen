@@ -28,4 +28,18 @@ function genericLast(arr) {
     return arr[size - 1];
 }
 console.log(genericLast([1, 2, 3]));
+// Letzte Aufgabe
+function genericRange(collection, start, end) {
+    if (start < 0) {
+        return [];
+    }
+    if (end > collection.length - 1) {
+        return [];
+    }
+    const subCollection = collection.slice(start, end);
+    if (subCollection.length === 1) {
+        subCollection[0];
+    }
+    return subCollection;
+}
 //# sourceMappingURL=uebung5.js.map
