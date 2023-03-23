@@ -49,5 +49,6 @@ function genericRange<T>(collection: Array<T>, start: number, end: number): Arra
     }
     return subCollection;
 }
+console.log(genericRange([1, "zwei", 3, 4, 5], 0,3));
 
 export {}
