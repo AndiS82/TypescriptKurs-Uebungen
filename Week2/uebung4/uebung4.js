@@ -65,7 +65,7 @@ function evaluateWinner(object1, object2) {
     }
 }
 console.log(evaluateWinner(player1.Games, player2.Games));
-// Übung 6
+// Bonusaufgabe 1
 //screibe ein Leaderboard etc.
 const game1 = {
     SpielName: "FlappyDuck",
@@ -95,4 +95,41 @@ function LeaderboardEntry(x, name) {
     return leaderboardArray.sort((a, b) => b.HighScore - a.HighScore);
 }
 console.log(LeaderboardEntry(gameArray, "FlappyDuck"));
+// erstelle eine Funktion, die einen Array von Playern nimmt und ein Leaderboard zurückgibt
+const player3 = {
+    Name: "Carina",
+    lastLogin: new Date(),
+    ID: 1912,
+    Email: "carina@carina.com",
+    Games: {
+        SpielName: "FlappyDuck",
+        HighScore: 19121991
+    }
+};
+let LeaderboardFlappyDuck = [];
+let LeaderboardSpaceInvaders = [];
+const leaderboardAdvanced = (playerArray) => {
+    playerArray.forEach(Player => {
+        if (Player.Games.SpielName === "FlappyDuck")
+            LeaderboardFlappyDuck.push(Player);
+        if (Player.Games.SpielName === "SpaceInvaders")
+            LeaderboardSpaceInvaders.push(Player);
+    });
+    const FlappyDuckTopPlayer = LeaderboardFlappyDuck.sort((a, b) => b.Games.HighScore - a.Games.HighScore)[0];
+    const SpaceInvadersTopPlayer = LeaderboardSpaceInvaders.sort((a, b) => b.Games.HighScore - a.Games.HighScore)[0];
+    const UltimateHighscores = [
+        {
+            Spielname: FlappyDuckTopPlayer.Games.SpielName,
+            Score: FlappyDuckTopPlayer.Games.HighScore,
+            Player: FlappyDuckTopPlayer
+        },
+        {
+            Spielname: SpaceInvadersTopPlayer.Games.SpielName,
+            Score: SpaceInvadersTopPlayer.Games.HighScore,
+            Player: SpaceInvadersTopPlayer
+        }
+    ];
+    return UltimateHighscores;
+};
+console.log(leaderboardAdvanced([player1, player2, player3, Andi]));
 //# sourceMappingURL=uebung4.js.map
