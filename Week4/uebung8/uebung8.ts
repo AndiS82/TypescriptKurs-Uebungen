@@ -104,22 +104,22 @@ interface Order {
 }
 
 const order1: CreditCardOrder | PayPalOrder = {
-    orderNumber: 2,
-    totalAmount: 23,
+    orderNumber: 1,
+    totalAmount: 12.8,
     productIds: [1, 2, 3],
-    ccn: 4321432143214321
+    creditCardNumber: 8673746
 }
 const order2: CreditCardOrder | PayPalOrder = {
-    orderNumber: 7,
-    totalAmount: 85.50,
+    orderNumber: 2,
+    totalAmount: 69.50,
     productIds: [1, 2, 3],
-    ccn: 1234123412341234
+    creditCardNumber: 165362263
 }
 const order3: CreditCardOrder | PayPalOrder = {
-    orderNumber: 900,
-    totalAmount: 23934,
-    productIds: [3, 4, 5],
-    email: 'me@menubar.com'
+    orderNumber: 3,
+    totalAmount: 5472,
+    productIds: [1, 2, 3, 4, 5],
+    email: 'me@order.com'
 }
 
 interface Paypal {
@@ -127,22 +127,22 @@ interface Paypal {
 }
 
 interface Creditcard {
-    ccn: number
+    creditCardNumber: number
 }
 
 type CreditCardOrder = Order & Creditcard
 type PayPalOrder = Order & Paypal
 
 function processCreditCardOrder(order: CreditCardOrder): void {
-    console.log("Contacting Credit Card Company for Order ", order.orderNumber);
+    console.log("Processing Credit Card payment for Order: ", order.orderNumber);
 }
 
 function processPaypalOrder(order: PayPalOrder): void {
-    console.log("Contacting PayPal for Order ", order.orderNumber);
+    console.log("Processing PayPal for Order: ", order.orderNumber);
 }
 
 function isCreditCardOrder(order: CreditCardOrder | PayPalOrder): order is CreditCardOrder {
-    return 'ccn' in (order as CreditCardOrder);
+    return 'creditCardNumber' in (order as CreditCardOrder);
 };
 
 function runOrders(orders: Order[]): void {

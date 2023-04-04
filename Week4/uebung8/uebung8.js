@@ -6,31 +6,31 @@
 // }
 Object.defineProperty(exports, "__esModule", { value: true });
 const order1 = {
-    orderNumber: 2,
-    totalAmount: 23,
+    orderNumber: 1,
+    totalAmount: 12.8,
     productIds: [1, 2, 3],
-    ccn: 4321432143214321
+    creditCardNumber: 8673746
 };
 const order2 = {
-    orderNumber: 7,
-    totalAmount: 85.50,
+    orderNumber: 2,
+    totalAmount: 69.50,
     productIds: [1, 2, 3],
-    ccn: 1234123412341234
+    creditCardNumber: 165362263
 };
 const order3 = {
-    orderNumber: 900,
-    totalAmount: 23934,
-    productIds: [3, 4, 5],
-    email: 'me@menubar.com'
+    orderNumber: 3,
+    totalAmount: 5472,
+    productIds: [1, 2, 3, 4, 5],
+    email: 'me@order.com'
 };
 function processCreditCardOrder(order) {
-    console.log("Contacting Credit Card Company for Order ", order.orderNumber);
+    console.log("Processing Credit Card payment for Order: ", order.orderNumber);
 }
 function processPaypalOrder(order) {
-    console.log("Contacting PayPal for Order ", order.orderNumber);
+    console.log("Processing PayPal for Order: ", order.orderNumber);
 }
 function isCreditCardOrder(order) {
-    return 'ccn' in order;
+    return 'creditCardNumber' in order;
 }
 ;
 function runOrders(orders) {
