@@ -4,6 +4,7 @@
       "lib": ["es2017", "dom"],
       "sourceMap": true,
       "isolatedModules": true,
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "types": ["node"]
     }
   }

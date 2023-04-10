@@ -4,7 +4,7 @@ type myString = string
 
 const aString: string = "Hallo";
 
-let myWord:myString = "Ein Wort";
+let myWord:myString = "Ein beliebiges Wort";
 
 myWord=aString;
 

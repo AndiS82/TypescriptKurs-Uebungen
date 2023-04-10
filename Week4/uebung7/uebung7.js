@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const readline = require("readline");
 const playingField = [
     ["empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall"],
     ["wall", "wall", "wall", "wall", "empty", "wall", "treasure", "wall"],
@@ -73,7 +74,6 @@ function inputToAction(userInput) {
     }
     return undefined;
 }
-const readline = require("readline");
 let rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,

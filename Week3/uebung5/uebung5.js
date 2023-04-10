@@ -20,6 +20,12 @@ function sum2(items) {
 }
 ;
 console.log(sum2(["test", 1, "lol"]));
+// Generic Length
+function genericLength(lengthArray) {
+    return lengthArray.length;
+}
+console.log(genericLength([1, 2, 3, false, "five"]));
+//Generic Last
 function genericLast(arr) {
     const size = arr.length;
     if (size < 1) {
@@ -42,4 +48,5 @@ function genericRange(collection, start, end) {
     }
     return subCollection;
 }
+console.log(genericRange([1, "zwei", 3, 4, 5], 0, 3));
 //# sourceMappingURL=uebung5.js.map
