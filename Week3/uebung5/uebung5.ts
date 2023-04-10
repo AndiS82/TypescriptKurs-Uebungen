@@ -24,6 +24,16 @@ function sum2(items: (number | string)[]):string{
 
 console.log(sum2(["test", 1, "lol"]));
 
+// Generic Length
+
+function genericLength<T>(lengthArray: Array<T>): number{
+    return lengthArray.length
+}
+
+console.log(genericLength([1,2,3,false, "five"]))
+
+//Generic Last
+
 function genericLast<T>(arr: Array<T>): T | undefined{
     const size = arr.length;
     if (size < 1) {

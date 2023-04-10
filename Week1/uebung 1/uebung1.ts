@@ -83,5 +83,6 @@ function addToParticipants(name:string, participants:string[]) {
   
   participants = removeFromParticipants("Marzio", participants);
   
-  console.log(greetEveryone("Hi", participants));
+console.log(greetEveryone("Hi", participants));
+  
 export{}
