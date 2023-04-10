@@ -1,3 +1,5 @@
+import * as readline from "readline";
+
 type Action = 'moveLeft' | 'moveRight' | 'moveUp' | 'moveDown' | undefined
 
 type Position = [number, number]
@@ -83,13 +85,12 @@ function inputToAction(userInput: string): Action {
     return undefined;
 }
 
-import * as readline from "readline";
-
 let rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
     terminal: true
 });
+
 function runGame(startingPosition: Position, playingField: FieldType[][])
     : void {
     console.log("Current Position: " + startingPosition);
@@ -114,4 +115,4 @@ function runGame(startingPosition: Position, playingField: FieldType[][])
 
 runGame([0, 0], playingField)
 
-export {}
+export { }
